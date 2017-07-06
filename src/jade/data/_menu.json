@@ -1,0 +1,107 @@
+{
+  "header": [
+    {
+      "name": "Home Page",
+      "url": "home-page1.html"
+    },
+    {
+      "name": "Blog",
+      "url": "javascript:void(0)",
+      "submenu":
+            [
+              {
+                "name": "Standart Blog",
+                "url": "blog.html",
+                "submenu":
+                        [
+                          {
+                            "name": "Work With Us",
+                            "url": "work-with-us.html"
+                          }
+                        ]
+
+              },
+              {
+                "name": "Blog Details",
+                "url": "blog-details.html"
+              }
+            ]
+    },
+    {
+      "name": "About Us",
+      "url": "about1.html"
+    },
+    {
+      "name": "Services",
+      "url": "about2.html"
+    },
+    {
+      "name": "Works",
+      "url": "about3.html"
+    },
+    {
+      "name": "Contact Us",
+      "url": "contact-us.html"
+    }
+  ],
+  "footer": [
+    {
+      "support": [
+        {
+          "name": "Help Center",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "My Account",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Track Order",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Order History",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Return Policy",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "FAQ",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Contact Us",
+          "url": "javascript:void(0)"
+        }
+      ],
+      "about": [
+        {
+          "name": "About Us",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Product Categories",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Coupon Codes",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Guides & Articles",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Popular Searches",
+          "url": "javascript:void(0)"
+        },
+        {
+          "name": "Sitemap",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ]
+}

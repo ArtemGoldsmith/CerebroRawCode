@@ -1,0 +1,16 @@
+extends layouts/_default
+
+block vars
+	- page = {name: 'home-page', count: '1', title: 'Home Page'}
+
+block header
+	include partials/_header
+
+block main
+	include pages/home-page1/_main
+
+block customizer
+	include pages/home-page1/_customizer
+
+block footer
+	include partials/_footer

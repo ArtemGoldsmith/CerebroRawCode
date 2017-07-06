@@ -1,0 +1,141 @@
+/**
+ * This is a conjugated set of all parts
+ * that needs to be styled with certain color scheme.
+
+
+@import "../_mixins"
+/**
+ * ------------------------------------------------------------------------------------------------------
+ * Background Color
+ * ------------------------------------------------------------------------------------------------------
+
+#banner-slider .owl-controls .owl-pagination .owl-page.active span,
+#banner-slider .owl-controls .owl-pagination .owl-page:hover span,
+.section-block.preview-gallery .overlay figcaption .star,
+.section-block.recent-news .news figcaption .star,
+.section-block #news-slider .news figcaption .star,
+.section-block.fat-bikes .news figcaption .star,
+.section-block.similar-news .blog-news .info:before,
+.section-block.technology .overlay figcaption a,
+.section-block.bikes .overlay figcaption .star,
+.section-block.contact-info .block .star,
+.partners .block a .overlay,
+.about-gallery .overlay figcaption .star,
+.marks .full-height .socials a:hover,
+.cd-single-point > a,
+.style3 .nav-tabs .active a,
+.style3 .nav-tabs .active a:hover, .style3 .nav-tabs .active a:focus,
+.features .progress-bar-list .progress-line
+  background-color: $theme-color
+
+/**
+ * ------------------------------------------------------------------------------------------------------
+ * Color
+ * ------------------------------------------------------------------------------------------------------
+
+header ul li a:hover,
+header ul li.open > a,
+.orange-text,
+.rating label,
+.rating input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label,
+.style1 .bike-tabs .nav-tabs .active a p,
+.style2 .bike-tabs .nav-tabs .active a p,
+.bottom-navigation .filter li a:hover, .bottom-navigation .filter li a:focus,
+.bottom-navigation .filter li.active a,
+.bottom-navigation .pagination li.active a,
+.bottom-navigation .pagination li:hover a, .bottom-navigation .pagination li:focus a,
+.socials.about a:hover,
+.marks .full-height .video a:hover,
+footer .socials a:hover
+  color: $theme-color
+.rating input:checked label:hover, .rating input:checked ~ label:hover,
+.rating input:checked label:hover ~ input:checked ~ label, .rating input:checked input:checked ~ label:hover
+  color: lighten($theme-color, 15%)
+header .navbar-header .navbar-collapse .navbar-nav li a:hover
+  color: $theme-color
+
+/**
+ * ------------------------------------------------------------------------------------------------------
+ * Border Color
+ * ------------------------------------------------------------------------------------------------------
+
+footer,
+.style1 .bike-tabs .nav-tabs .active a,
+.style1 .bike-tabs .nav-tabs .active a:hover, .style1 .bike-tabs .nav-tabs .active a:focus,
+.style2 .bike-tabs .nav-tabs .active a,
+.style2 .bike-tabs .nav-tabs .active a:hover, .style2 .bike-tabs .nav-tabs .active a:focus,
+.style3 .nav-tabs .active a,
+.style3 .nav-tabs .active a:hover, .style3 .nav-tabs .active a:focus,
+.blog-info.overlay:hover:before,
+.blog-info.overlay:before
+  border-color: $theme-color
+
+/**
+ * ------------------------------------------------------------------------------------------------------
+ * Animation
+ * ------------------------------------------------------------------------------------------------------
+
++keyframes(cd-pulse)
+  0%
+    +crossBrowser(transform, scale(1))
+    +alpha-background-color(rgba($theme-color, 0.8), $theme-color)
+
+  50%
+    +alpha-background-color(rgba($theme-color, 0.8), $theme-color)
+
+  100%
+    +crossBrowser(transform, scale(1.6))
+    +alpha-background-color(rgba($theme-color, 0), $theme-color)
+
+/**
+ * ------------------------------------------------------------------------------------------------------
+ * Buttons
+ * ------------------------------------------------------------------------------------------------------
+
+.rounded-btn,
+.rect-btn,
+form .submit-btn,
+#news-slider .owl-controls .owl-buttons .owl-prev, #news-slider .owl-controls .owl-buttons .owl-next,
+#news-slider .owl-controls .owl-pagination .owl-page.active span,
+#news-slider .owl-controls .owl-pagination .owl-page:hover span
+  background-color: $theme-color
+.rounded-btn:hover,
+.rounded-btn.hover,
+.rect-btn:hover,
+.rect-btn.hover,
+form .submit-btn:hover,
+#news-slider .owl-buttons .owl-prev, #news-slider .owl-buttons .owl-next:hover,
+#news-slider .owl-controls .owl-buttons .owl-prev:hover, #news-slider .owl-controls .owl-buttons .owl-next:hover
+  background-color: lighten($theme-color, 15%)
+
+.rounded-btn:focus,
+.rounded-btn.active,
+.rect-btn:focus,
+.rect-btn.active,
+form .submit-btn:focus,
+#news-slider .owl-buttons .owl-prev, #news-slider .owl-buttons .owl-next:focus
+  background-color: darken($theme-color, 7%)
+
+/**
+ * ------------------------------------------------------------------------------------------------------
+ * Text
+ * ------------------------------------------------------------------------------------------------------
+  
+.rounded-btn,
+.rounded-btn:hover, .rounded-btn:focus,
+.rect-btn,
+.rect-btn:hover, .rect-btn:focus,
+form .submit-btn,
+form .submit-btn:hover, form .submit-btn:focus,
+.section-block .star i,
+#news-slider .owl-buttons .owl-prev, #news-slider .owl-buttons .owl-next,
+.section-block.similar-news .blog-news:hover .info .text span,
+.section-block.similar-news .blog-news:hover .info .text a,
+.section-block.technology .overlay figcaption a,
+.marks .full-height .socials a:hover,
+.cd-single-point i,
+.style3 .nav-tabs .active a p,
+#news-slider .owl-controls .owl-buttons .owl-prev, #news-slider .owl-controls .owl-buttons .owl-next
+  color: $theme-text

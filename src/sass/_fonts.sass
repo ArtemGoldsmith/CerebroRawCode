@@ -1,0 +1,11 @@
+=font-face($font-name, $file-name, $font-style: normal, $font-weight: normal)
+  @font-face
+    font-family: '#{$font-name}'
+    src: url('../fonts/#{$file-name}')
+
+    font-style: $font-style
+    font-weight: $font-weight
+
++font-face('Rubik Bold','Rubik-Bold.ttf', normal, 900)
++font-face('Rubik Regular','Rubik-Regular.ttf', normal, 400)
++font-face('Rubik Regular','Rubik-Light.ttf', normal, 100)

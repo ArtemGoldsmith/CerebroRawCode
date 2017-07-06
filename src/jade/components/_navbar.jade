@@ -1,0 +1,30 @@
+mixin navbar(obj, name, url)
+	ul.nav.navbar-nav.navbar-right.mt-5.mt-sm-10.mt-xs-50
+		each item in obj
+			if item.submenu
+				li.dropdown
+					a.dropdown-toggle(data-toggle='dropdown', href='javascript:void(0)')
+						| #{item.name}
+						span.caret
+					ul.dropdown-menu.multi-level.mt-25.mt-xs-0.bd-0
+						each sublist in item.submenu
+							if sublist.submenu
+								li.dropdown-submenu
+									a.dropdown-toggle(href=sublist.url)
+										| #{sublist.name}
+									ul.dropdown-menu.bd-0
+										each item in sublist.submenu
+											li
+												a.pt-8.pb-8(href=item.url)
+													=item.name
+							else
+								li
+									a.pt-8.pb-8(href=sublist.url)
+										=sublist.name
+			else
+				li
+					a(href=item.url)
+						=item.name
+	///.navbar-nav
+
++navbar(header, "name", "url")

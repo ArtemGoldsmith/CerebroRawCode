@@ -1,0 +1,813 @@
+/**
+  * Extra Small + (Mobile more)
+  **/
+
+@media (min-width: 480px)
+  .cd-single-point
+    &.is-open
+      .cd-more-info
+        &.cd-left
+          right: 140%
+        &.cd-right
+          left: 140%
+        &.cd-top
+          bottom: 140%
+        &.cd-bottom
+          top: 140%
+  .cd-single-point
+    .cd-more-info
+      position: absolute
+      width: 280px
+      height: 310px
+      padding: 1em
+      overflow-y: visible
+      line-height: 14pt
+      border-radius: 10px
+      &:before
+        display: block
+      &.cd-left, &.cd-right, &.cd-left::before, &.cd-right::before
+        top: 50%
+        bottom: auto
+        +crossBrowser(transform, translateY(-50%))
+      &.cd-left
+        right: 160%
+        left: auto
+        &::before
+          border-left-color: $dark-blue
+          left: 100%
+      &.cd-right
+        left: 160%
+        &::before
+          border-right-color: $dark-blue
+          right: 100%
+      &.cd-top, &.cd-bottom, &.cd-top::before, &.cd-bottom::before
+        left: 50%
+        right: auto
+        +crossBrowser(transform, translateX(-50%))
+      &.cd-top
+        bottom: 160%
+        top: auto
+        &::before
+          border-top-color: $dark-blue
+          top: 100%
+      &.cd-bottom
+        top: 160%
+        &::before
+          border-bottom-color: $dark-blue
+          bottom: 100%
+      h2
+        margin-bottom: 20px
+        margin-top: 20px
+      p
+        font-size: 9pt
+        text-align: justify
+      .cd-close-info
+        display: none
+/**
+  * Extra Extra Small Additional
+  **/
+@media (max-width: 400px)
+  .section-block
+    &.bikes
+      .overlay
+        img
+          margin-left: -50%
+        &.not-gradient
+          img
+            margin-left: initial
+/**
+  * Extra Extra Small (Mobile Small)
+  **/
+
+@media (max-width: 480px)
+  body
+    font-family: "Rubik Regular"
+    font-size: 12pt
+  h1, h2, h3, h4, h5, h6
+    margin-top: 15pt
+    margin-bottom: 10pt
+  h1
+    font-size: 32pt
+  h2
+    font-size: 26pt
+  h3
+    font-size: 22pt
+  h4
+    font-size: 18pt
+  h5
+    font-size: 13pt
+  h6
+    font-size: 10.5pt
+  header
+    ul
+      li
+        a
+          .caret
+            border-width: 8px
+            margin-left: 15px
+  footer .sign-up
+    top: 520px!important
+  #banner-slider
+    .owl-controls
+      .owl-pagination
+        .owl-page
+          span
+            margin-top: -16px
+  .section-block
+    &.top-banner
+      img
+        margin-left: -100% !important
+    &.preview-gallery
+      .overlay
+        figcaption
+          p
+            font-size: 13pt
+            margin: 22px 0
+    &.technology
+      .overlay
+        & > a
+          i
+            line-height: 260pt!important
+    &.contact-info
+      .block
+        p
+          font-size: 13pt
+          padding: 24px 15px
+          &.text-left
+            font-size: 9pt!important
+            &.text-uppercase
+              padding: 8px 15px!important
+    &.preview-gallery
+      .overlay
+        max-height: 300px
+        img
+          min-height: 220px!important
+        a
+          i
+            line-height: 170px
+  .home-page1
+    .section3
+      .block
+        max-width: initial
+        width: 50%
+        float: left!important
+  .style3
+    .nav-tabs
+      img
+        width: 55px
+
+/**
+  * Mobile Default
+  **/
+
+@media (max-width: 767px)
+  .text-heading
+    font-size: 14pt!important
+  header
+    .navbar-header
+      top: 0
+      padding: 20px 5px!important
+      .navbar-collapse
+        display: block
+        z-index: 100
+        left: 0
+        top: 0
+        width: 100%
+        height: 100vh
+        position: fixed
+        background-color: $dark-blue
+        visibility: hidden
+        opacity: 0
+        +crossBrowser(transition, all .2s ease-out)
+        .navbar-nav
+          li
+            a
+              color: #fff
+              font-weight: 100!important
+              font-size: 22pt
+              padding: 25px 20px!important
+              &:hover
+                color: $orange
+            .dropdown-menu
+              padding-left: 30px
+              li
+                a
+                  font-size: 18pt
+      .navbar-toggle
+        position: relative
+        top: 0
+        right: 0
+        z-index: 101
+        margin-right: 0
+        padding: 7px 10px
+        +crossBrowser(transition, all .3s ease-in)
+        .icon-bar
+          background-color: $dark-blue
+          +crossBrowser(transition, all .3s ease-in)
+          & + .icon-bar
+            margin-top: 6px
+            & + .icon-bar
+              width: 16px
+              float: right
+      &.open
+        .navbar-collapse
+          visibility: visible
+          opacity: 1
+        .navbar-toggle
+          right: -5px
+          .icon-bar
+            background-color: #fff
+            width: 40px
+            & + .icon-bar
+              margin-top: -2px
+            &:nth-child(2)
+              +crossBrowser(transform, rotate(45deg))
+            &:nth-child(3)
+              +crossBrowser(transform, rotate(-45deg))
+            &:last-child
+              opacity: 0
+    &.minified
+      .navbar-header
+        padding: 0 5px!important
+        &.open
+          .navbar-toggle
+            top: 20px
+  #banner-slider
+    .item
+      img
+        height: 700px
+        width: initial
+    .owl-controls
+      .owl-buttons
+        top: initial
+        bottom: 17%
+        .owl-prev
+          width: 120px
+        .owl-next
+          width: 120px
+      .owl-pagination
+        .owl-page
+          span
+            width: 60px
+  .banner-text
+    p
+      width: 100%
+  .block-info
+    img
+      max-height: initial
+      height: 80vw
+    figcaption
+      h4
+        word-wrap: break-word
+        font-size: 18pt
+  .style
+    h1
+      font-size: 20pt
+  .style1
+    .bike-tabs
+      .nav-tabs
+        li
+          width: 33.33333333%
+          position: relative
+          z-index: 1
+          a
+            padding-left: 0
+            padding-right: 0
+            p
+              padding: 0 5px
+              margin: 0
+            img
+              display: none
+          &.active
+            a
+              background-color: #fff
+      .tab-pane
+        h3
+          font-size: 20pt
+          display: inline-block
+        img
+          top: -265px
+          left: 0
+          right: 0
+          margin: 0 auto!important
+          width: 250px
+  .style2
+    .bike-tabs
+      .nav-tabs
+        width: 100%
+        li
+          width: 33.33333333%
+          position: relative
+          z-index: 1
+          a
+            padding-left: 0
+            padding-right: 0
+            p
+              padding: 0 5px
+              margin: 0
+            img
+              display: none
+          &.active
+            a
+              background-color: #fff
+      .tab-content
+        width: initial
+        .tab-pane
+          h3
+            font-size: 20pt
+            display: inline-block
+          img
+            top: -265px
+            left: 0
+            right: 0
+            margin: 0 auto!important
+            width: 250px
+  .style3
+    .nav-tabs
+      margin-top: 0
+    .tab-content
+      .tab-pane
+        img
+          left: 0
+          width: 295px
+          top: -605px
+  .partners
+    .block
+      margin: 7px
+      width: calc(50% - 7px)
+  .about-gallery
+    .block
+      width: 100%
+      margin-top: 30px
+      &:first-child
+        margin-top: 15px
+    .overlay
+      img
+        width: 100%
+        height: initial
+        min-height: initial
+  .features
+    .progress-bar-list
+      .progress-bar
+        &:before
+          background-size: 10.1%
+          background-image: -webkit-linear-gradient(0, transparent 98%, $dark-blue 50%)
+          background-image: -moz-linear-gradient(0px 50%, transparent 98%, $dark-blue 50%)
+          background-image: -ms-linear-gradient(0, transparent 98%, $dark-blue 50%)
+          background-image: -o-linear-gradient(0, transparent 98%, $dark-blue 50%)
+  .marks
+    .cd-product
+      .cd-product-mockup
+        height: 570px
+        background-size: 640px
+        background-position: 55% 100%
+        .cd-single-point
+          display: none
+    .full-height
+      width: 100%
+      height: 580px
+      .socials
+        width: 123px
+        left: 0
+        right: 0
+        margin: auto
+        a
+          margin: 0 3px
+      .video
+        left: 15px
+        top: 240px
+        height: 50px
+        width: 230px
+        img
+          width: 35px
+          margin-top: 4px
+        a
+          line-height: 46px
+          font-size: 14pt
+          left: 15px
+          top: 240px
+          width: 250px
+          img
+            float: left
+            margin-left: 0
+            margin-right: 10px
+  .blog-info
+    &.overlay
+      display: none
+  .bottom-navigation
+    .filter
+      left: 0
+      li
+        float: left
+  .section-block
+    &.banner1
+      background-position: 35% 50%
+      height: 400px
+      .banner-text
+        height: 250px
+        width: 100%
+    &.top-banner
+      img
+        width: initial
+        height: 100%
+        margin-left: -50%
+    &.preview-gallery
+      .overlay
+        img
+          min-height: 300px
+    &.fat-bikes
+      .news
+        img
+          height: initial
+        figcaption
+          .title
+            margin-top: 18px
+    &.technology
+      .overlay
+        & > a
+          i
+            line-height: 590pt
+    &.bikes
+      .overlay
+        img
+          height: initial
+          min-height: 360px
+          min-width: 100%
+    &.similar-news
+      .news-title
+        top: -45px
+        left: 15px
+        right: 0
+        font-size: 18pt
+        font-weight: 900
+        font-family: "Rubik Bold"
+        +crossBrowser(transform, rotate(0))
+      .blog-news
+        &:hover
+          .info
+            .text
+              margin-bottom: 80px
+              +crossBrowser(transform, translateX(20%))
+    &.bikes
+      .overlay
+        &.not-gradient
+          img
+            min-height: 250px
+          a
+            i
+              line-height: 300pt
+    &.work-with
+      .block
+        margin-bottom: 15px
+    #news-slider
+      .news
+        img
+          height: initial
+  footer
+    .sign-up
+      position: absolute
+      top: 460px
+    input[type='submit']
+      padding: 12px 0
+
+/**
+  * Small (Tablet)
+  **/
+
+@media (min-width: 768px) and (max-width: 991px)
+  header
+    .navbar-header
+      .navbar-brand
+        padding: 16px 15px
+      .navbar-collapse
+        .nav > li > a
+          padding: 10px 8px 15px
+    .dropdown-menu
+      min-width: 200px
+  #banner-slider
+    .item
+      img
+        width: 150%
+    .owl-controls
+      .owl-buttons
+        top: 70%
+        .owl-prev
+          left: 7%
+        .owl-next
+          right: 7%
+  .home3
+    #banner-slider
+      .owl-controls
+        .owl-buttons
+          top: 50%
+  .banner-text
+    p
+      width: 75%
+  .style1
+    .bike-tabs
+      .nav-tabs
+        img
+          width: 90%
+  .style2
+    .bike-tabs
+      .tab-content
+        width: 100%
+  .partners
+    .block
+      margin: 15px
+      width: 220px
+  .features
+    .progress-bar-list
+      .progress-bar
+        &:before
+          background-size: 72px
+  .about-gallery
+    .overlay
+      img
+        width: initial
+        height: initial
+      figcaption
+        .title
+          padding-left: 70px
+        .sub-title
+          padding-left: 70px
+      &.top
+        a
+          i
+            line-height: 300pt
+      &.bottom
+        a
+          i
+            line-height: 210pt
+  .cd-product
+    .cd-product-mockup
+      height: 80vw
+      max-height: 800px
+      background-position: 50% 100%
+      background-size: 120%
+  .marks
+    .full-height
+      .video
+        left: 15px
+        top: 250px
+        width: 250px
+        a
+          line-height: 45px
+          font-size: 14pt
+          img
+            float: left
+            margin-right: 15px
+            margin-left: 0
+      .socials
+        bottom: -15%
+        width: 120px
+    .cd-single-point
+      & > a
+        width: 25px
+        height: 25px
+      i
+        font-size: 11pt
+        line-height: 20pt
+      &:nth-of-type(1)
+        bottom: 21.2%
+        right: 68%
+      &:nth-of-type(2)
+        bottom: 22%
+        right: 62%
+      &:nth-of-type(3)
+        bottom: 22.8%
+        left: 41.8%
+      &:nth-of-type(4)
+        bottom: 35.4%
+        left: 43%
+      &:nth-of-type(5)
+        top: 52%
+        left: 39.5%
+      &:nth-of-type(6)
+        top: 48%
+        left: 57%
+      &:nth-of-type(7)
+        bottom: 21%
+        right: 31.6%
+      .cd-more-info
+        width: 240px
+        height: 350px
+        h2
+          margin-bottom: 15px
+          margin-top: 5px
+          text-align: left
+          padding-bottom: 15px
+          border-bottom: 2px solid $orange
+  .blog-info
+    &.overlay
+      &:hover
+        figcaption
+          h5
+            +crossBrowser(transform, translate3d(0, 45%, 0))
+          a
+            +crossBrowser(transform, translate3d(0, 15%, 0))
+      figcaption
+        height: 140px
+        h5
+          padding: 0 20px
+    figcaption
+      .date
+        font-size: 8pt
+    .rounded-btn
+      padding: 5pt 20pt
+
+  /* Section Blocks */
+  .section-block
+    &.banner1
+      .banner-text
+        width: 80%
+    &.top-banner
+      img
+        width: initial
+        height: 100%
+        margin-left: -25%
+    &.fat-bikes
+      .news
+        img
+          height: initial
+    &.technology
+      .overlay
+        & > a
+          i
+            line-height: 280pt
+    &.similar-news
+      .news-title
+        left: -32px
+        top: 13%
+      .blog-news
+        &:hover
+          .info
+            .text
+              margin-bottom: 50px
+              +crossBrowser(transform, translateX(13%))
+    &.work-with
+      .block
+        padding: 0
+        padding-top: 45px
+        min-height: 170px
+    &.preview-gallery
+      .overlay
+        max-height: 320px
+        a
+          i
+            line-height: 200pt
+  footer
+    form
+      input[type='submit']
+        padding: 12px
+  .style3
+    .nav-tabs
+      img
+        width: 9%
+  .block-info
+    img
+      max-height: 275px
+/**
+  * Medium
+  **/
+@media (min-width: 992px)
+  .cd-product
+    padding-top: 100px
+    height: 100vh
+    .cd-product-mockup
+      &:before
+        display: block
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 0
+        height: 45%
+        +crossBrowser(transform, translateZ(-100px) translateY(480px))
+        +crossBrowser(transition, transform 0.6s)
+    &.is-product-tour
+      height: auto
+      .cd-product-mockup
+        +crossBrowser(transform, translateX(0))
+        &:before
+          +crossBrowser(transform, translateZ(-100px) translateX(226px) translateY(216px))
+    .cd-close-product-tour
+      display: block
+      position: absolute
+      top: 40px
+      right: 0
+      height: 40px
+      width: 40px
+      opacity: 0
+      visibility: hidden
+      &.is-visible
+        visibility: visible
+        opacity: 1
+  .no-touch .cd-close-product-tour:hover
+    opacity: .8
+
+  .cd-single-point
+    +crossBrowser(transform, scale(0))
+    &:after
+      -webkit-animation: none
+      -moz-animation: none
+      animation: none
+  .points-enlarged
+    .cd-single-point
+      +crossBrowser(transform, scale(1))
+      +crossBrowser(animation, cd-bounce 0.4s)
+  //.points-pulsing
+  //  .cd-single-point
+  //    &:after
+  //      +crossBrowser(animation, cd-pulse 2s infinite)
+
+@media (min-width: 992px) and (max-width: 1199px)
+  .block-info
+    img
+      max-height: 370px
+  .marks
+    .full-height
+      .video
+        bottom: -20px
+      .socials
+        bottom: -5px
+  .features
+    .progress-bar-list
+      .progress-bar
+        &:before
+          background-size: 46px
+          background-image: -webkit-linear-gradient(0, transparent 98%, $dark-blue 50%)
+          background-image: -moz-linear-gradient(0px 50%, transparent 98%, $dark-blue 50%)
+          background-image: -ms-linear-gradient(0, transparent 98%, $dark-blue 50%)
+          background-image: -o-linear-gradient(0, transparent 98%, $dark-blue 50%)
+  .blog-info
+    &.overlay
+      &:hover
+        figcaption
+          h5
+            +crossBrowser(transform, translate3d(0, 27%, 0))
+      figcaption
+        h5
+          padding: 0 60px
+  .section-block
+    &.similar-news
+      .news-title
+        left: -35px
+      .blog-news
+        &:hover
+          .info
+            .text
+              margin-bottom: 50px
+              +crossBrowser(transform, translateX(13%))
+    &.preview-gallery
+      .overlay
+        figcaption
+          p
+            font-size: 13pt
+            margin: 21px 0
+    &.preview-gallery
+      .overlay
+        a
+          i
+            line-height: 180pt
+    #news-slider
+      .news
+        figcaption
+          .sub-title
+            font-size: 9pt
+  .rect-btn
+    padding: 9pt 22pt
+
+  .style1
+    .bike-tabs
+      .tab-content
+        .tab-pane
+          img
+            top: 45%
+  .style2
+    .bike-tabs
+      .tab-content
+        .tab-pane
+          img
+            width: 340px
+  .style3
+    .tab-content
+      .tab-pane
+        img
+          width: 320px
+          top: 5%
+/**
+  * Large
+  **/
+@media (min-width: 1200px)
+  .section-block
+    #news-slider
+      .news
+        figcaption
+          .title
+            font-size: 14pt
+            padding-left: 70px
+            margin-top: 2px
+          .sub-title
+            font-size: 10pt
+            padding-left: 70px

@@ -1,0 +1,67 @@
+#customizer
+	button#custom-toggle
+		i.fa.fa-cog(aria-hidden='true')
+	#custom-block
+		ul.nav.nav-pills
+			li.active
+				a(href='#customize', data-toggle='tab') Customize
+			li
+				a(href='#color', data-toggle='tab') Color Settings
+		.tab-content.clearfix
+			#customize.tab-pane.active
+				.dropdown.navbar
+					button.btn.dropdown-toggle(type='button')
+						| Navbar
+						i.fa.fa-chevron-down(aria-hidden='true')
+					.dropdown-menu
+						input#fixed(type='radio', name='navbar', checked='')
+						label(for='fixed')
+							span.text Fixed navbar
+							span.round
+						input#scroll(type='radio', name='navbar')
+						label(for='scroll')
+							span.text Scroll navbar
+							span.round
+			#color.tab-pane
+				.dropdown.theme-color
+					button.btn.dropdown-toggle(type='button')
+						| Theme color
+						i.fa.fa-chevron-down(aria-hidden='true')
+					.dropdown-menu
+						label.color-label#colorLabelTheme(for='color-input1')
+						input.color-input#color-input1(type='checkbox', checked='')
+						.color-picker
+							canvas.color-block#colorBlockTheme
+							canvas.color-stripe#colorStripeTheme
+						.hexColor
+							label.hex-label#hexLabelTheme(for='hexInputTheme') #
+							input.hex-input#hexInputTheme(type='text', maxlength='6', placeholder='FFC600')
+				.dropdown.text-color
+					button.btn.dropdown-toggle(type='button')
+						| Text color
+						i.fa.fa-chevron-down(aria-hidden='true')
+					.dropdown-menu
+						label.color-label#colorLabelText(for='color-input2')
+						input.color-input#color-input2(type='checkbox', checked='')
+						.color-picker
+							canvas.color-block#colorBlockText
+							canvas.color-stripe#colorStripeText
+						.hexColor
+							label.hex-label#hexLabelText(for='hexInputText') #
+							input.hex-input#hexInputText(type='text', maxlength='6', placeholder='FFC600')
+				.dropdown.buttons-color
+					button.btn.dropdown-toggle(type='button')
+						| Buttons color
+						i.fa.fa-chevron-down(aria-hidden='true')
+					.dropdown-menu
+						label.color-label#colorLabelButtons(for='color-input3')
+						input.color-input#color-input3(type='checkbox', checked='')
+						.color-picker
+							canvas.color-block#colorBlockButtons
+							canvas.color-stripe#colorStripeButtons
+						.hexColor
+							label.hex-label#hexLabelButtons(for='hexInputButtons') #
+							input.hex-input#hexInputButtons(type='text', maxlength='6', placeholder='FFC600')
+		//- form#text-options
+			//- input#generate.btn(type='submit', value='Generate')
+// /#customizer

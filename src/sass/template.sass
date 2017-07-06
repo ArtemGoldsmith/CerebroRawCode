@@ -1,0 +1,1983 @@
+/* Table of Content
+ *
+ *   #Base (SASS)
+ *     - Mixins
+ *     - Variables
+ *
+ *   #Template
+ *     - Default settings
+ *     - Custom classes
+ *     - Header
+ *     - Footer
+ *     - Section Blocks
+ *     - Marks With Tooltips
+ *     - Customizer
+ *     - List of pages
+ *     - Responsibility
+ *     - Compatibility
+ */
+
+/* Plugins
+@import "_plugins"
+/* Fonts
+@import "_fonts"
+/* Mixins
+@import "_mixins"
+/* Variables
+@import "_variables"
+
+/* Default settings
+body
+  font-family: "Rubik Regular"
+  font-size: 14pt
+  font-weight: 400
+  color: $white
+  background-color: $dark-blue
+
+h1, h2, h3, h4, h5, h6
+  font-family: "Rubik Bold"
+  margin-top: 20pt
+  margin-bottom: 15pt
+  text-transform: uppercase
+h1
+  font-size: 38pt
+h2
+  font-size: 32pt
+h3
+  font-size: 26pt
+h4
+  font-size: 20pt
+h5
+  font-size: 14pt
+h6
+  font-size: 8pt
+label
+  font-weight: 500
+a:hover, a:focus
+  text-decoration: none
+.bold
+  font-family: "Rubik Bold"
+.regular
+  font-family: "Rubik Regular"
+
+.nav>li>a
+  padding: 10px 12px
+input, button
+  &:focus
+    outline: 0
+/* Custom classes
+.zoomed
+  +crossBrowser(transform, scale3d(1.1, 1.1, 1))
+.zoom-image-parent
+  overflow: hidden
+  display: block
+  position: relative
+  z-index: 1
+.zoom-image
+  cursor: pointer
+  max-width: 100%
+  min-width: 100%
+  +crossBrowser(transition, transform .3s ease-in)
+  &:hover, &:focus
+    +crossBrowser(transform, scale3d(1.1, 1.1, 1))
+  & + a
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+.orange-text
+  color: $orange
+.black-text
+  color: $black
+a
+  &.orange-text
+    &:hover
+      color: $white
+.rounded-btn
+  background: $orange
+  border: 0
+  color: $light-black
+  padding: 7pt 23pt
+  display: inline-block
+  font-size: 11pt
+  font-weight: 400
+  +crossBrowser(border-radius, 50px)
+  +crossBrowser(transition, all .2s ease-out)
+  &:hover, &:focus
+    text-decoration: none
+    color: $light-black
+  &:hover
+    background: lighten($orange, 15%)
+  &:focus
+    background: darken($orange, 7%)
+  &.hover
+    background: lighten($orange, 15%)
+  &.active
+    background: darken($orange, 7%)
+  &.disabled
+    background: #18252a
+    color: #243237
+.rect-btn
+  background: $orange
+  border: 0
+  color: $light-black
+  text-align: center
+  padding: 9pt 35pt
+  display: inline-block
+  font-size: 11pt
+  font-weight: 900
+  font-family: "Rubik Bold"
+  text-transform: uppercase
+  +crossBrowser(transition, all .2s ease-out)
+  &:hover, &:focus
+    text-decoration: none
+    color: $light-black
+  &:hover
+    background: lighten($orange, 15%)
+  &:focus
+    background: darken($orange, 7%)
+  &.hover
+    background: lighten($orange, 15%)
+  &.active
+    background: darken($orange, 7%)
+  &.disabled
+    background: #18252a
+    color: #243237
+
+.text-heading
+  font-family: "Rubik Bold"!important
+  text-transform: uppercase!important
+  font-size: 18pt!important
+  &.footer
+    font-size: 16pt!important
+    margin-bottom: 20px
+.about-title
+  font-size: 26pt
+  font-weight: 900
+  margin-top: 40px
+.text
+  font-size: 11pt!important
+  font-weight: 100!important
+  line-height: 18pt!important
+  //line-height: 10px
+.shortcode-header
+  background: #0b171c
+  a, input
+    margin: 25pt 15pt
+.shortcode-footer
+  background: #2b393f
+form
+  input, textarea
+    width: 100%
+    padding: 5px 10px
+    border: 0
+    background: 0
+    border-bottom: 1px solid $grey
+    resize: none
+    font-size: 12pt
+    font-weight: 100
+    color: $grey
+    &:hover, &:focus
+      outline: 0
+    +placeholder
+      color: $grey
+      opacity: 1
+  .submit-btn
+    display: inline-block
+    border: 0
+    background: $orange
+    color: $light-black
+    font-weight: 100
+    font-size: 11pt
+    padding: 7pt 35pt
+    +crossBrowser(border-radius, 3px)
+    margin-top: 30pt
+    +crossBrowser(transition, all .2s ease-in)
+    &:hover, &:focus
+      text-decoration: none
+      color: $light-black
+    &:hover
+      background: lighten($orange, 15%)
+    &:focus
+      background: darken($orange, 7%)
+header, .container, .footer, img,
+h1, h2, h3, h4, h5, h6,
+p, li
+  +crossBrowser(transition, width .5s ease-in)
+img
+  width: 100%
+.pages-list
+  a
+    float: left
+    clear: left
+.bg-orange
+  background-color: $orange
+  ul
+    li
+      a
+        color: $white
+        &:hover, &:focus
+          color: $light-black
+      .dropdown-menu
+        background-color: $orange
+        .dropdown-submenu
+          .dropdown-menu
+            background-color: $orange
+.bg-white
+  background-color: $white
+  ul
+    li
+      a
+        color: #4e5e6b
+.bg-black
+  background-color: $dark-blue
+  ul
+    li
+      a
+        color: $white
+  &.navbar-header
+    .navbar-toggle
+      .icon-bar
+        background-color: $white
+    .dropdown-menu
+      background-color: $dark-blue
+      .dropdown-submenu
+        .dropdown-toggle
+          .icon-bar
+            background-color: $white
+          &:after
+            border-left-color: $white
+/* Header
+header
+  left: 0
+  right: 0
+  margin: auto
+  z-index: 100
+  +crossBrowser(transition, all .3s ease-in)
+  &.scrolled-menu
+    transition: initial
+  .navbar-header
+    left: 0
+    right: 0
+    top: 30px
+    margin: auto
+    +crossBrowser(transition, all .2s ease-out)
+    &.pos-abs
+      width: 100%!important
+      top: 0!important
+      +crossBrowser(border-radius, 5px!important)
+      padding: 25px 70px 25px 35px!important
+      transition: initial!important
+    .dropdown-menu
+      box-shadow: none
+  &.minified
+    margin-top: 0!important
+    .navbar-header
+      +crossBrowser(border-radius, 0!important)
+      padding: 0 30px!important
+      top: 0
+      width: 100%!important
+      &.pos-abs
+        width: 100%!important
+        top: 30px!important
+        +crossBrowser(border-radius, 0!important)
+        padding: 25px 70px 25px 35px!important
+      .multi-level
+        margin-top: 0!important
+  .navbar-brand
+    & > svg
+      max-width: 185px
+      margin-top: -5px
+      width: 100%
+  ul
+    li
+      a
+        font-size: 11pt
+        font-weight: 500!important
+        +crossBrowser(transition, all .2s ease-in)
+        &:hover
+          color: $orange
+          background-color: transparent!important
+          text-decoration: none
+        &:focus
+          background-color: transparent!important
+          text-decoration: none
+        .caret
+          margin-left: 8px
+          color: inherit
+      &.open
+        & > a
+          color: $orange
+          background-color: transparent!important
+      ul
+        li
+          a
+            font-weight: 900
+            &:hover, &:focus
+              color: $orange
+              background-color: #f6f7f7!important
+              text-decoration: none
+/* Footer
+footer
+  position: relative
+  border-top: 6px solid $orange
+  small
+    background-color: #030405
+  .logo
+    svg, img
+      width: 265px
+  .socials
+    a
+      display: block
+      width: 40px
+      height: 40px
+      line-height: 30pt
+      margin-left: 5px
+      background-size: contain
+      background-position: 50% 50%
+      background-repeat: no-repeat
+      float: left
+      text-align: center
+      font-size: 16pt
+      +crossBrowser(border-radius, 50px!important)
+      color: $white
+      border: 1px solid $white
+      +crossBrowser(transition, all .2s ease-in)
+      &:hover
+        background-color: $white
+        color: $orange
+  .footer-text
+    line-height: 22px
+  .list
+    ul
+      padding-left: 20px
+      margin-top: 35px
+      li
+        margin: 3px 0
+        a
+          color: $white
+          font-size: 11pt
+          font-weight: 100
+    p
+      font-size: 11pt
+      font-weight: 100
+      margin-bottom: 3px
+      span
+        color: #999a9c
+  form
+    input[type='email']
+      width: 67%
+      float: left
+      height: 44px
+      padding: 0 20px
+      border: 0
+      background-color: #1e2123
+      font-size: 10.5pt
+    input[type='submit']
+      width: 33%
+/**
+  * Home Page 1 Slider
+  **/
+#banner-slider
+  .item
+    img
+      display: block
+      height: 100%
+      max-height: 700px
+      width: 100%
+      max-width: 1920px
+      margin: auto
+  .owl-controls
+    margin-top: 0
+    .owl-pagination
+      background-color: $light-blue
+      height: 8px
+      .owl-page
+        span
+          background-color: $light-blue
+          width: 100px
+          height: 8px
+          margin: -1px
+          margin-top: -19px
+          +crossBrowser(border-radius, 0)
+          border-left: 2px solid
+          border-right: 2px solid
+          border-color: $dark-blue
+          opacity: 1
+          +crossBrowser(transition, all .2s ease-in)
+        &.active
+          span
+            background-color: $orange
+        &:hover
+          span
+            background-color: $orange
+    .owl-buttons
+      position: absolute
+      width: 100%
+      top: 50%
+      .owl-next, .owl-prev
+        background: none
+        cursor: pointer
+        font-size: 24pt
+        position: absolute
+        z-index: 10
+        opacity: 0.8
+        width: 100px
+        height: 85px
+        overflow: hidden
+        +crossBrowser(border-radius, 5px)
+        line-height: 60pt
+        +crossBrowser(transition, all .2s ease-in)
+        &:hover
+          opacity: 1!important
+        i
+          position: relative
+          z-index: 5
+      .owl-next
+        right: 2%
+        .thumb
+          right: 0
+      .owl-prev
+        left: 2%
+        .thumb
+          left: 0
+      .thumb
+        width: 150px
+        height: 85px
+        position: absolute
+        top: 0
+.banner-text
+  position: absolute
+  z-index: 1
+  margin: auto
+  h1
+    text-transform: uppercase
+    margin-bottom: 5px
+  h4
+    text-transform: uppercase
+    margin-top: 0
+  p
+    font-size: 12pt
+    width: 45%
+
+.block-info
+  position: relative
+  overflow: hidden
+  text-align: center
+  cursor: pointer
+  +crossBrowser(border-radius, 10px)
+  img
+    max-height: 460px
+    +crossBrowser(border-radius, 10px)
+    cursor: default
+  figcaption
+    background: rgba(0, 0, 0, 0.6)
+    color: $white
+    cursor: default
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: 150px
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
+    +crossBrowser(transition, transform 0.35s)
+    +crossBrowser(transform, translate3d(0, 100%,0))
+    h4
+      display: inline-block
+      margin-top: 20px
+      width: 100%
+      +crossBrowser(transition, transform 0.55s)
+      +crossBrowser(transform, translate3d(0, 200%,0))
+    .rating
+      label
+        +crossBrowser(transition, transform 0.7s)
+        +crossBrowser(transform, translate3d(0, 200%,0))
+  &:hover
+    figcaption, h4, .rating label
+      +crossBrowser(transform, translate3d(0, 0, 0))
+    label
+      &:nth-child(2)
+        +crossBrowser(transition-delay, .3s)
+      &:nth-child(4)
+        +crossBrowser(transition-delay, .25s)
+      &:nth-child(6)
+        +crossBrowser(transition-delay, .2s)
+      &:nth-child(8)
+        +crossBrowser(transition-delay, .15s)
+      &:nth-child(10)
+        +crossBrowser(transition-delay, .1s)
+
+.dropdown-submenu
+  position: relative
+  .dropdown-toggle
+    padding: 8px 20px
+  > .dropdown-menu
+    +crossBrowser(border-radius, 0)
+    border-top-right-radius: 4px
+    border-bottom-right-radius: 4px
+    top: 0
+    left: 100%
+    margin-top: -5px
+  &:hover
+    > .dropdown-menu
+      display: block
+    > a:after
+      color: initial
+      background-color: initial
+  > a:after
+    display: block
+    content: " "
+    float: right
+    width: 0
+    height: 0
+    border-color: transparent
+    border-style: solid
+    border-width: 4px 0 4px 4px
+    border-left-color: $light-black
+    margin-top: 7px
+    margin-right: -10px
+
+/**
+  * Stars Rating
+  **/
+.rating
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 10px
+  width: 127px
+  margin: auto
+  border: none
+  input
+    display: none
+  label
+    cursor: pointer
+    color: $orange
+    float: right
+    &:before
+      margin: 0 4px
+      font-family: FontAwesome
+      display: inline-block
+      content: "\f006"
+  input:checked ~ label
+    color: $orange
+    &:before
+      content: "\f005"
+  &:not(:checked) > label:hover
+    color: $orange
+    &:before
+      content: "\f005"
+    ~ label
+      color: $orange
+      &:before
+        content: "\f005"
+  input:checked
+    + label:hover, ~ label:hover
+      color: lighten($orange, 15%)
+    label:hover ~ input:checked ~ label, input:checked ~ label:hover ~ label
+      color: lighten($orange, 15%)
+
+.style1
+  .bike-tabs
+    p
+      color: $light-black
+    .nav-tabs
+      border: 0
+      img
+        width: 70%
+      li
+        opacity: 0.5
+        +crossBrowser(transition, all .2s ease-in)
+        a
+          text-align: center
+          border: 2px solid transparent
+          +crossBrowser(border-radius, 10px)
+          +crossBrowser(transition, all .2s ease-in)
+          &:hover
+            outline: none
+            background-color: transparent
+            border: 2px solid transparent
+            +crossBrowser(border-radius, 10px)
+            cursor: pointer
+          p
+            font-family: "Rubik Bold"
+            font-size: 11pt
+            margin-top: 10pt
+            margin-bottom: 0
+            +crossBrowser(transition, all .2s ease-in)
+        &:hover
+          opacity: 1
+      .active
+        opacity: 1
+        a
+          outline: none
+          background-color: $white
+          border: 2px solid $orange
+          +crossBrowser(border-radius, 10px)
+          cursor: pointer
+          +crossBrowser(transition, all .2s ease-in)
+          &:hover, &:focus
+            border: 2px solid $orange
+          p
+            color: $orange
+    .tab-pane
+      img
+        position: absolute
+        top: 20%
+        left: -70%
+        width: 60%
+      &.active
+        &.tab-pane
+          &.fade
+            opacity: 0
+            +crossBrowser(transition, opacity .3s ease-in)
+            img
+              +crossBrowser(transition, margin-left .4s ease-out)
+              margin-left: -100%
+            p
+              +crossBrowser(transition, transform .4s ease-out)
+              +crossBrowser(transform, translateX(150%))
+            h3
+              +crossBrowser(transition, transform .4s ease-out)
+              +crossBrowser(transform, translateX(150%))
+            &.in
+              opacity: 1
+              img
+                margin-left: 0
+              p
+                +crossBrowser(transform, translateX(0))
+              h3
+                +crossBrowser(transform, translateX(0))
+
+    .tab-content > .tab-pane, .pill-content > .pill-pane
+      display: none
+
+    .tab-content > .active, .pill-content > .active
+      display: block
+
+.style2
+  .bike-tabs
+    p
+      color: $light-black
+    .nav-tabs
+      width: 545px
+      margin: auto
+      margin-top: 30px
+      border: 0
+      img
+        width: 70%
+      li
+        opacity: 0.5
+        +crossBrowser(transition, all .2s ease-in)
+        a
+          text-align: center
+          border: 2px solid transparent
+          +crossBrowser(border-radius, 10px)
+          +crossBrowser(transition, all .2s ease-in)
+          &:hover
+            outline: none
+            background-color: transparent
+            border: 2px solid transparent
+            +crossBrowser(border-radius, 10px)
+            cursor: pointer
+          p
+            font-family: "Rubik Bold"
+            font-size: 11pt
+            margin-top: 10pt
+            margin-bottom: 0
+            +crossBrowser(transition, all .2s ease-in)
+        &:hover
+          opacity: 1
+      .active
+        opacity: 1
+        a
+          outline: none
+          background-color: $white
+          border: 2px solid $orange
+          +crossBrowser(border-radius, 10px)
+          cursor: pointer
+          +crossBrowser(transition, all .2s ease-in)
+          &:hover, &:focus
+            border: 2px solid $orange
+          p
+            color: $orange
+    .tab-content
+      width: 65%
+      .tab-pane
+        img
+          position: absolute
+          left: 65%
+          margin: auto
+          width: 395px
+          top: 45%
+        &.active
+          &.tab-pane
+            &.fade
+              opacity: 0
+              +crossBrowser(transition, opacity .3s ease-in)
+              img
+                +crossBrowser(transition, margin-left .4s ease-out)
+                margin-left: 100%
+              p
+                +crossBrowser(transition, transform .4s ease-out)
+                +crossBrowser(transform, translateX(-150%))
+              h3
+                +crossBrowser(transition, transform .4s ease-out)
+                +crossBrowser(transform, translateX(-150%))
+              &.in
+                opacity: 1
+                img
+                  margin-left: 0
+                p
+                  +crossBrowser(transform, translateX(0))
+                h3
+                  +crossBrowser(transform, translateX(0))
+
+    .tab-content > .tab-pane, .pill-content > .pill-pane
+      display: none
+
+    .tab-content > .active, .pill-content > .active
+      display: block
+.style3
+  .nav-tabs
+    margin: auto
+    padding-left: 15px
+    margin-top: 50px
+    border: 0
+    img
+      width: 20%
+      float: left
+    li
+      float: none
+      margin: 10px 0
+      opacity: 0.5
+      +crossBrowser(transition, all .2s ease-in)
+      a
+        text-align: center
+        border: 2px solid $light-blue
+        +crossBrowser(border-radius, 10px)
+        +crossBrowser(transition, all .2s ease-in)
+        &:hover
+          outline: none
+          background-color: transparent
+          border: 2px solid $dark-blue
+          +crossBrowser(border-radius, 10px)
+          cursor: pointer
+        p
+          font-family: "Rubik Bold"
+          padding: 7px 0
+          margin-top: 0
+          color: lighten($black, 15%)
+          font-size: 11pt
+          margin-bottom: 0
+          +crossBrowser(transition, all .2s ease-in)
+      &:hover
+        opacity: 1
+    .active
+      opacity: 1
+      a
+        outline: none
+        background-color: $orange
+        border: 2px solid $orange
+        +crossBrowser(border-radius, 10px)
+        cursor: pointer
+        +crossBrowser(transition, all .2s ease-in)
+        &:hover, &:focus
+          border: 2px solid $orange
+          background-color: $orange
+        p
+          color: $black
+  .tab-content
+    .tab-pane
+      img
+        position: absolute
+        left: 100%
+        width: 395px
+        top: 0
+      p
+        color: $light-black
+        &:nth-of-type(2)
+          margin-top: 20px
+      &.active
+        &.tab-pane
+          &.fade
+            opacity: 0
+            +crossBrowser(transition, opacity .3s ease-in)
+            img
+              +crossBrowser(transition, margin-left .4s ease-out)
+              margin-left: 100%
+            p
+              +crossBrowser(transition, transform .4s ease-out)
+              +crossBrowser(transform, translateY(250%))
+            h3
+              +crossBrowser(transition, transform .4s ease-out)
+              +crossBrowser(transform, translateY(150%))
+            &.in
+              opacity: 1
+              img
+                margin-left: 0
+              p
+                +crossBrowser(transform, translateY(0))
+              h3
+                +crossBrowser(transform, translateY(0))
+
+  .tab-content > .tab-pane, .pill-content > .pill-pane
+    display: none
+
+  .tab-content > .active, .pill-content > .active
+    display: block
+
+
+
+/**
+  *
+  * Section Blocks
+  *
+  **/
+.section-block
+  position: relative
+  overflow: hidden
+  &.training
+    +background-image-retina('../images/home-page1/background1', png)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: cover
+    &:before
+      +alpha-background-color(rgba($black, 0.5), $black)
+      content: ''
+      display: block
+      height: 100%
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+  &.style
+    +background-image-retina('../images/home-page1/background2', png)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: cover
+  &.banner1
+    +background-image-retina('../images/home-page1/background3', png)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: cover
+    height: 300px
+    .banner-text
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      height: 160px
+      width: 50%
+      +alpha-background-color(rgba($black, 0.8), $black)
+  &.banner2
+    +background-image-retina('../images/home-page3/background1', png)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: cover
+    height: 390px
+    .banner-text
+      margin: 55px auto
+      font-size: 42pt
+      font-weight: 900
+      line-height: 50pt
+  &.preview-gallery
+    .overlay
+      position: relative
+      overflow: hidden
+      cursor: pointer
+      margin-bottom: 30px
+      border-radius: 10px
+      &:before
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-bottom-right-radius: 7px
+        content: ''
+        opacity: 0
+        +crossBrowser(background, linear-gradient(to bottom, rgba(44, 56, 64, 0) 0%, rgba(44, 56, 64, 0.8) 75%))
+        +crossBrowser(transform, translate3d(0, 50%, 0))
+        +crossBrowser(transition, all 0.4s)
+      a
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: auto
+        width: 100%
+        height: 100%
+        font-size: 40pt
+        color: rgba(255, 255, 255, 0.5)
+        border-bottom-right-radius: 7px
+        content: ''
+        opacity: 0
+        +crossBrowser(transform, translate3d(0, 50%, 0))
+        +crossBrowser(transition, all 0.4s)
+        i
+          line-height: 240pt
+      &:hover
+        &:before
+          opacity: 1
+          +crossBrowser(transform, translate3d(0, 0, 0))
+        a
+          opacity: 1
+          +crossBrowser(transform, translate3d(0, 0, 0))
+      img
+        +crossBrowser(border-radius, 7px)
+      figcaption
+        cursor: default
+        position: absolute
+        bottom: 0
+        left: 0
+        height: 65px
+        width: 100%
+        background-color: $light-blue
+        border-bottom-right-radius: 7px
+        .star
+          background-color: $orange
+          color: $light-black
+          position: absolute
+          height: 100%
+          left: 0
+          top: 0
+          width: 60px
+          border-bottom-left-radius: 7px
+          i
+            line-height: 48pt
+        p
+          width: calc(100% - 60px)
+          float: right
+          font-size: 16pt
+          text-transform: uppercase
+          margin: 18px 0
+  &.recent-news
+    .news
+      cursor: pointer
+      margin-bottom: 30px
+      +crossBrowser(border-radius, 10px)
+      img
+        +crossBrowser(border-radius, 10px)
+        height: 100%
+        width: initial
+      figcaption
+        cursor: default
+        position: absolute
+        top: 0
+        left: 0
+        height: 65px
+        width: 100%
+        background-color: $light-blue
+        border-top-right-radius: 7px
+        .star
+          background-color: $orange
+          color: $light-black
+          position: absolute
+          height: 100%
+          left: 0
+          top: 0
+          width: 60px
+          border-top-left-radius: 7px
+          i
+            line-height: 48pt
+        .title
+          width: 100%
+          text-align: left
+          padding-left: 90px
+          font-size: 24pt
+          text-transform: uppercase
+          margin: 10px 0
+  #news-slider
+    .news
+      cursor: pointer
+      margin-bottom: 30px
+      +crossBrowser(border-radius, 10px)
+      img
+        +crossBrowser(border-radius, 10px)
+        height: 100%
+        width: initial
+        max-width: 300px
+      figcaption
+        cursor: default
+        position: absolute
+        top: 0
+        left: 0
+        height: 65px
+        width: 100%
+        background-color: $light-blue
+        border-top-right-radius: 7px
+        .star
+          background-color: $orange
+          color: $light-black
+          position: absolute
+          height: 100%
+          left: 0
+          top: 0
+          width: 60px
+          border-top-left-radius: 7px
+          i
+            line-height: 48pt
+        .title
+          width: 100%
+          text-align: left
+          padding-left: 80px
+          font-size: 18pt
+          text-transform: uppercase
+          margin: 0
+          margin-top: 5px
+        .sub-title
+          text-transform: uppercase
+          font-size: 12pt
+          font-weight: 100
+          padding-left: 80px
+    .post
+      text-align: center
+      .post-title
+        cursor: default
+        font-size: 20pt
+        margin-bottom: 20px
+        text-transform: uppercase
+      .post-descr
+        cursor: default
+        text-align: left
+        height: 92px
+        overflow: hidden
+      a
+        margin-top: 20px
+  &.fat-bikes
+    .block
+      margin-top: 35px
+    .news
+      cursor: pointer
+      margin-bottom: 30px
+      +crossBrowser(border-radius, 10px)
+      img
+        +crossBrowser(border-radius, 10px)
+        height: 100%
+        width: initial
+      figcaption
+        cursor: default
+        position: absolute
+        bottom: 0
+        left: 0
+        height: 65px
+        width: 100%
+        background-color: $light-blue
+        border-bottom-right-radius: 7px
+        .star
+          background-color: $orange
+          color: $light-black
+          position: absolute
+          height: 100%
+          left: 0
+          top: 0
+          width: 60px
+          border-bottom-left-radius: 7px
+          i
+            line-height: 48pt
+        .title
+          width: 100%
+          text-align: left
+          padding-left: 80px
+          font-size: 18pt
+          text-transform: uppercase
+          margin: 0
+          margin-top: 5px
+        .sub-title
+          text-transform: uppercase
+          font-size: 12pt
+          font-weight: 100
+          padding-left: 80px
+    .post
+      text-align: center
+      .post-descr
+        cursor: default
+        text-align: left
+        height: 92px
+        overflow: hidden
+      a
+        margin-top: 20px
+  &.similar-news
+    overflow: initial
+    .news-title
+      color: $white
+      +crossBrowser(transform, rotate(-90deg))
+      position: absolute
+      left: -45px
+      top: 50%
+      font-size: 9pt
+    .blog-news
+      figure
+        img
+          width: 100%
+      &:hover
+        .info
+          &:before
+            opacity: 1
+            +crossBrowser(transform, scale3d(0.9,0.9,1))
+          .text
+            color: $light-black
+            margin-bottom: 60px
+            +crossBrowser(transform, translateX(19%))
+            span
+              color: $light-black
+            a
+              color: $light-black
+      .info
+        position: absolute
+        width: 100%
+        top: 0
+        height: 100%
+        left: 0
+        padding: 0 15px
+        &:before
+          content: ''
+          position: absolute
+          width: calc(100% - 30px)
+          +crossBrowser(transition, all .4s)
+          +alpha-background-color(rgba($orange, 0.9), $orange)
+          height: 100%
+          left: 0
+          right: 0
+          margin: auto
+          top: 0
+          z-index: 1
+          opacity: 0
+        .text
+          text-align: left
+          position: absolute
+          z-index: 1
+          bottom: 0
+          right: 0
+          top: initial
+          left: 0
+          width: calc(100% - 30px)
+          margin: auto
+          margin-bottom: 0
+          padding: 0 15px
+          +crossBrowser(transition, all .4s)
+          span
+            color: $white
+            +crossBrowser(transition, all .4s)
+          a
+            color: $white
+            line-height: 50px
+            position: relative
+            left: 0
+            +crossBrowser(transition, all .4s)
+            i
+              position: relative
+              top: 1px
+              margin-left: 5px
+              +crossBrowser(transition, margin-left .4s)
+            &:hover
+              text-decoration: none
+              i
+                margin-left: 10px
+  &.technology
+    .overlay
+      position: relative
+      overflow: hidden
+      cursor: pointer
+      &:before
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        content: ''
+        opacity: 0
+        z-index: 1
+        +crossBrowser(background, linear-gradient(to bottom, rgba(23, 29, 34, 0) 0%, rgba(23, 29, 34, 0.75) 75%))
+        +crossBrowser(transform, translate3d(0, 50%, 0))
+        +crossBrowser(transition, all 0.4s)
+      & > a
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: auto
+        text-align: center
+        width: 100%
+        height: 100%
+        font-size: 40pt
+        color: rgba(255, 255, 255, 0.5)
+        content: ''
+        opacity: 0
+        z-index: 1
+        +crossBrowser(transform, translate3d(0, 50%, 0))
+        +crossBrowser(transition, all 0.4s)
+        i
+          line-height: 440pt
+      &:hover
+        &:before
+          opacity: 1
+          +crossBrowser(transform, translate3d(0, 0, 0))
+        > a
+          opacity: 1
+          +crossBrowser(transform, translate3d(0, 0, 0))
+      figcaption
+        cursor: default
+        position: absolute
+        z-index: 5
+        top: 0
+        right: 0
+        height: 65px
+        width: 100%
+        a
+          display: inline-block
+          line-height: 36px
+          text-align: center
+          color: $light-black
+          background-color: $orange
+          width: 35px
+          height: 35px
+          margin: 0 1px
+          +crossBrowser(transition, all .2s ease-in)
+          &:hover
+            background-color: $white
+  &.bikes
+    .overlay
+      position: relative
+      overflow: hidden
+      cursor: pointer
+      margin-bottom: 30px
+      +crossBrowser(border-radius, 10px)
+      &:before
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        content: ''
+        opacity: 0
+        +crossBrowser(background, linear-gradient(to bottom, rgba(44, 56, 64, 0) 0%, rgba(44, 56, 64, 0.8) 75%))
+        +crossBrowser(transform, translate3d(0, 50%, 0))
+        +crossBrowser(transition, all 0.4s)
+      &.not-gradient
+        &:before
+          background: none
+        a
+          i
+            line-height: 210pt
+            font-size: 24pt
+      img
+        height: 100%
+        width: initial
+        +crossBrowser(border-radius, 10px)
+      a
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: auto
+        width: 100%
+        height: 100%
+        font-size: 40pt
+        color: rgba(255, 255, 255, 0.5)
+        content: ''
+        opacity: 0
+        +crossBrowser(transform, translate3d(0, 50%, 0))
+        +crossBrowser(transition, all 0.4s)
+        i
+          line-height: 240pt
+          text-align: center
+          width: 100%
+      &:hover
+        &:before
+          opacity: 1
+          +crossBrowser(transform, translate3d(0, 0, 0))
+        a
+          opacity: 1
+          +crossBrowser(transform, translate3d(0, 0, 0))
+      figcaption
+        border-bottom-right-radius: 7px
+        border-bottom-left-radius: 7px
+        cursor: default
+        position: absolute
+        bottom: 0
+        left: 0
+        height: 65px
+        width: 100%
+        background-color: $light-blue
+        .star
+          background-color: $orange
+          border-bottom-left-radius: 7px
+          color: $light-black
+          position: absolute
+          text-align: center
+          height: 100%
+          left: 0
+          top: 0
+          width: 60px
+          i
+            line-height: 48pt
+        .title
+          width: 100%
+          text-align: left
+          padding-left: 80px
+          font-size: 18pt
+          text-transform: uppercase
+          margin: 0
+          margin-top: 5px
+        .sub-title
+          text-transform: uppercase
+          font-size: 12pt
+          font-weight: 100
+          padding-left: 80px
+  &.work-with
+    .row
+      .form-wrapper
+        background-color: $light-blue
+    .block
+      background-color: $light-blue
+      padding: 30px 0
+  &.contact-info
+    .block
+      height: 70px
+      position: relative
+      +crossBrowser(border-radius, 5px)
+      margin: 30px 0
+      .star
+        position: absolute
+        border-top-left-radius: 5px
+        border-bottom-left-radius: 5px
+        width: 55px
+        height: 100%
+        background-color: $orange
+        color: $dark-blue
+        text-align: center
+        line-height: 70px
+      p
+        display: block
+        background-color: $light-blue
+        height: 100%
+        width: 50%
+        float: left
+        font-size: 16pt
+        margin-bottom: 0
+        padding: 20px 15px
+        &.text-left
+          border-left: 1px solid $dark-blue
+          border-bottom-right-radius: 5px
+          border-top-right-radius: 5px
+        &.text
+          line-height: 23pt!important
+  &.contact-form
+    background-color: $light-blue
+  &.not-found
+    h1
+      font-size: 120pt
+/**
+  * End Section Blocks
+  **/
+
+#news-slider
+  display: none
+  margin-top: 50px
+  .owl-wrapper
+    .owl-item
+      opacity: 0.4
+      +crossBrowser(transition, all .2s ease-in)
+      &.active
+        opacity: 1
+      &.unactive
+        opacity: 0.1
+      &:hover
+        opacity: 1
+  .owl-controls
+    margin-top: 50px
+    .owl-pagination
+      .owl-page
+        span
+          width: 14px
+          height: 14px
+          margin: 5px 10px
+          +crossBrowser(transition, background-color .2s)
+        &.active
+          span
+            background-color: $orange
+        &:hover
+          span
+            background-color: $orange
+    .owl-buttons
+      margin-top: 15px
+      .owl-prev, .owl-next
+        background-color: $orange
+        color: $dark-blue
+        opacity: 1
+        width: 150px
+        height: 35px
+        font-weight: 400
+        font-size: 11pt
+        line-height: 28px
+        +crossBrowser(transition, background-color .2s ease-in)
+        &:hover
+          background-color: lighten($orange, 15%)
+
+.blog-info
+  position: relative
+  overflow: hidden
+  text-align: center
+  cursor: pointer
+  margin-bottom: 30px
+  &.out-grid
+    figcaption
+      width: 100%
+  img
+    cursor: default
+  figcaption
+    background: $light-blue
+    color: $white
+    cursor: default
+    position: absolute
+    bottom: 0
+    width: calc(100% - 30px)
+    height: 150px
+    +crossBrowser(transition, transform 0.35s)
+    +crossBrowser(transform, translate3d(0, 100%,0))
+    .date
+      font-size: 9pt
+      background-color: $dark-blue
+      padding: 10px 0
+      width: 50%
+      margin: auto
+      margin-top: -18px
+      outline: 1px solid $dark-blue
+      +crossBrowser(transition, transform 0.7s)
+      +crossBrowser(transform, translate3d(0, 200%,0))
+    h5
+      display: inline-block
+      margin-top: 20px
+      margin-bottom: 15px
+      +crossBrowser(transition, transform 0.9s)
+      +crossBrowser(transform, translate3d(0, 200%,0))
+    a
+      +crossBrowser(transition, transform 1.2s)
+      +crossBrowser(transform, translate3d(0, 200%,0))
+  &:hover
+    figcaption, h5, a, .date
+      +crossBrowser(transform, translate3d(0, 0, 0))
+  &.overlay
+    figcaption
+      background-color: transparent
+      top: 0
+      bottom: 0
+      margin: auto
+      +crossBrowser(transform, translate3d(0, 0, 0))
+      h5
+        padding: 0 100px
+        +crossBrowser(transform, translate3d(0, 90%, 0))
+      a
+        +crossBrowser(transform, translate3d(0, 460%, 0))
+    &:hover
+      figcaption
+        h5
+          +crossBrowser(transform, translate3d(0, 10%, 0))
+        a
+          +crossBrowser(transform, translate3d(0, 25%, 0))
+      &:before
+        border: 6px solid
+        border-color: $orange
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      margin: auto
+      width: calc(100% - 30px)
+      height: 100%
+      content: ''
+      cursor: default
+      border: 0 solid $orange
+      +crossBrowser(transition, border .3s)
+      +alpha-background-color(rgba($dark-blue, 0.5), $dark-blue)
+
+.bottom-navigation
+  a
+    font-size: 9pt
+    text-transform: uppercase
+  .filter
+    position: relative
+    left: -13px
+    li
+      a
+        font-size: 9pt
+        font-weight: 100
+        text-transform: uppercase
+        color: $white
+        padding: 4px 11px
+        margin: 0 11pt
+        +crossBrowser(border-radius, 20px)
+        background: transparent
+        +crossBrowser(transition, all .2s ease-in)
+        &:hover, &:focus
+          background: $light-blue
+          color: $orange
+      &.active
+        a
+          background: $light-blue
+          color: $orange
+  .pagination
+    margin: 0
+    li
+      display: inline-block
+      margin: 0 2px
+      a
+        color: $white
+        background: transparent
+        border: 0
+        padding: 5px 10px
+        +crossBrowser(transition, all .2s ease-in)
+      &.active
+        a
+          color: $orange
+          background: transparent
+      &:hover, &:focus
+        a
+          color: $orange
+.features
+  .progress-bar-list
+    width: 100%
+    .progress-bar
+      height: 20px
+      margin-bottom: 20px
+      background: $light-blue
+      width: 100%
+      position: relative
+      +crossBrowser(border-radius, 5px)
+      &:before
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        +crossBrowser(border-radius, 5px)
+        background-color: transparent
+        background-size: 56px
+        background-image: linear-gradient(0, transparent 98%, $dark-blue 50%)
+        background-image: -o-linear-gradient(0, transparent 98%, $dark-blue 50%)
+        background-image: -ms-linear-gradient(0, transparent 98%, $dark-blue 50%)
+        background-image: -moz-linear-gradient(0px 50%, transparent 98%, $dark-blue 50%)
+        background-image: -webkit-linear-gradient(0, transparent 98%, $dark-blue 50%)
+    .progress-line
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+      height: inherit
+      background: $orange
+      width: 0
+.partners
+  .block
+    position: relative
+    display: block
+    overflow: hidden
+    width: 183px
+    float: left
+    margin: 1px
+    height: 120px
+    -webkit-transform: translateZ(0)
+    background-color: $light-blue
+    a
+      display: block
+      position: relative
+      width: 100%
+      height: 100%
+      img
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+        width: 70%
+      .overlay
+        display: none
+        position: absolute
+        z-index: -1
+        background-color: $orange
+        width: 100%
+        height: 100%
+.about-gallery
+  .block
+    width: 33.3333333%
+    float: left
+  .overlay
+    position: relative
+    overflow: hidden
+    cursor: pointer
+    &.top
+      figcaption
+        top: 0
+        bottom: initial
+      a
+        i
+          line-height: 400pt
+    &.bottom
+      figcaption
+        top: initial
+        bottom: 0
+      a
+        i
+          line-height: 320pt
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      content: ''
+      opacity: 0
+      +crossBrowser(background, linear-gradient(to bottom, rgba(44, 56, 64, 0) 0%, rgba(44, 56, 64, 0.8) 75%))
+      +crossBrowser(transform, translate3d(0, 50%, 0))
+      +crossBrowser(transition, all 0.4s)
+    img
+      height: 100%
+      min-height: 485px
+    a
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      width: 100%
+      height: 100%
+      font-size: 40pt
+      color: rgba(255, 255, 255, 0.5)
+      content: ''
+      opacity: 0
+      +crossBrowser(transform, translate3d(0, 50%, 0))
+      +crossBrowser(transition, all 0.4s)
+      i
+        line-height: 300pt
+        text-align: center
+        width: 100%
+    &:hover
+      &:before
+        opacity: 1
+        +crossBrowser(transform, translate3d(0, 0, 0))
+      a
+        opacity: 1
+        +crossBrowser(transform, translate3d(0, 0, 0))
+    figcaption
+      cursor: default
+      position: absolute
+      bottom: 0
+      left: 0
+      height: 65px
+      width: 100%
+      background-color: $light-blue
+      .star
+        background-color: $orange
+        color: $light-black
+        position: absolute
+        text-align: center
+        height: 100%
+        left: 0
+        top: 0
+        width: 60px
+        i
+          line-height: 48pt
+      .title
+        width: 100%
+        text-align: left
+        padding-left: 80px
+        font-size: 18pt
+        text-transform: uppercase
+        margin: 0
+        margin-top: 5px
+      .sub-title
+        text-transform: uppercase
+        font-size: 12pt
+        font-weight: 100
+        padding-left: 80px
+.socials
+  &.about
+    a
+      color: $white
+      +crossBrowser(transition, all .2s ease-in)
+      &:hover
+        color: $orange
+        text-decoration: none
+      i
+        font-size: 24pt
+      p
+        padding-top: 20px
+
+
+/**
+  *
+  * Marks With Tooltips
+  *
+  **/
+
+.marks
+  background-color: $white
+  .full-height
+    height: 68vw
+    max-height: 865px
+    .socials
+      position: absolute
+      bottom: 4%
+      left: 15px
+      z-index: 1
+      a
+        display: block
+        float: left
+        text-align: center
+        border: 1px solid $light-black
+        +crossBrowser(border-radius, 5px)
+        width: 35px
+        height: 35px
+        font-size: 14pt
+        margin: 0 2px
+        line-height: 27pt
+        background-color: $white
+        color: $light-black
+        &:hover
+          color: $white
+          background-color: $orange
+          +crossBrowser(transition, all .2s ease-in)
+    .video
+      position: absolute
+      z-index: 1
+      right: 15px
+      bottom: 25px
+      a
+        color: $light-black
+        text-transform: uppercase
+        font-size: 12pt
+        font-family: "Rubik Regular"
+        +crossBrowser(transition, color .3s ease-in)
+        &:hover
+          color: $orange
+          text-decoration: none
+      img
+        width: 50px
+        margin-left: 20px
+        margin-top: -3px
+
+.cd-img-replace
+  display: inline-block
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+
+.cd-product
+  position: relative
+  width: 100%
+  margin: 0 auto
+
+  .cd-product-mockup
+    +background-image-retina('../images/about3/screen', png)
+    background-repeat: no-repeat
+    background-size: 120%
+    background-position: 50% 100%
+    width: 100%
+    position: relative
+    height: 60vw
+    max-height: 780px
+    max-width: 1280px
+    margin: auto
+    img
+      display: block
+      position: relative
+
+.no-csstransforms3d
+  .cd-product:after
+    content: ""
+    display: table
+    clear: both
+  .cd-product-mockup
+    float: right
+    &:before
+      display: none
+
+.cd-3d-right-side, .cd-3d-bottom-side
+  display: none
+
+.cd-close-product-tour
+  display: none
+
+.cd-single-point
+  position: absolute
+  +crossBrowser(border-radius, 50%)
+  > a
+    position: relative
+    display: block
+    width: 30px
+    height: 30px
+    +crossBrowser(border-radius, inherit)
+    background: $orange
+    z-index: 2
+    +crossBrowser(transition, background-color 0.3s)
+  i
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    text-align: center
+    z-index: 2
+    pointer-events: none
+    color: $dark-blue
+    font-size: 12pt
+    line-height: 23pt
+    +crossBrowser(transition, transform .5s ease-out)
+  &:after
+    content: ''
+    position: absolute
+    z-index: 1
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    +crossBrowser(border-radius, inherit)
+    background-color: transparent
+  &:nth-of-type(1)
+    bottom: 28.2%
+    right: 68%
+    &:after
+      +crossBrowser(animation, cd-pulse 2s infinite .3s)
+  &:nth-of-type(2)
+    right: 62%
+    bottom: 28.6%
+    &:after
+      +crossBrowser(animation, cd-pulse 2s infinite .2s)
+  &:nth-of-type(3)
+    bottom: 30%
+    left: 41.4%
+    &:after
+      +crossBrowser(animation, cd-pulse 2s infinite .6s)
+  &:nth-of-type(4)
+    bottom: 46.6%
+    left: 43%
+    &:after
+      +crossBrowser(animation, cd-pulse 2s infinite .4s)
+  &:nth-of-type(5)
+    top: 36.5%
+    left: 39.5%
+    &:after
+      +crossBrowser(animation, cd-pulse 2s infinite .1s)
+  &:nth-of-type(6)
+    top: 31%
+    left: 56.7%
+    &:after
+      +crossBrowser(animation, cd-pulse 2s infinite .6s)
+  &:nth-of-type(7)
+    bottom: 28%
+    right: 31.5%
+    &:after
+      +crossBrowser(animation, cd-pulse 2s infinite .5s)
+
+  &.is-open
+    > a
+      background-color: #685f99
+    i
+      color: $white
+      +crossBrowser(transform, rotate(360deg))
+    &:after
+      display: none
+    .cd-more-info
+      visibility: visible
+      opacity: 1
+      +crossBrowser(transform, scale(1))
+      -webkit-transition: opacity 0.3s 0s, visibility 0s 0s, -webkit-transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s
+      -moz-transition: opacity 0.3s 0s, visibility 0s 0s, -moz-transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s
+      transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s
+  &.visited
+    > a
+      background-color: #685f99
+    &:after
+      display: none
+
+.no-csstransforms3d .cd-single-point
+  +crossBrowser(transform, scale(1))
+
++keyframes(cd-bounce)
+  0%
+    +crossBrowser(transform, scale(0))
+
+  60%
+    +crossBrowser(transform, scale(1.2))
+
+  100%
+    +crossBrowser(transform, scale(1))
+
++keyframes(cd-pulse)
+  0%
+    +crossBrowser(transform, scale(1))
+    +alpha-background-color(rgba($orange, 0.8), $orange)
+
+  50%
+    +alpha-background-color(rgba($orange, 0.8), $orange)
+
+  100%
+    +crossBrowser(transform, scale(1.6))
+    +alpha-background-color(rgba($orange, 0), $orange)
+
+.cd-single-point
+  .cd-more-info
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 3
+    width: 100%
+    height: 100%
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+    text-align: left
+    line-height: 1.5
+    background-color: $dark-blue
+    padding: 2em 1em 1em
+    visibility: hidden
+    opacity: 0
+    +crossBrowser(transform, scale(0.8))
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s, -webkit-transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s, -moz-transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s
+    transition: opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s
+    &:before
+      content: ''
+      position: absolute
+      height: 0
+      width: 0
+      display: none
+      border: 8px solid transparent
+    h2
+      font-size: 14pt
+      font-family: "Rubik Regular"
+      text-align: center
+    p
+      font-weight: 100
+      color: $white
+
+    .cd-close-info
+      position: fixed
+      top: 0
+      right: 0
+      height: 44px
+      width: 44px
+.home-page1
+  .section3
+    .block
+      float: none!important
+      display: inline-table
+      max-width: 236px
+/* Customizer
+@import "_customizer"
+/* List of pages */
+@import "_pages"
+/* Responsibility
+@import "_screen"
+/* Compatibility
+@import "_compatibility"

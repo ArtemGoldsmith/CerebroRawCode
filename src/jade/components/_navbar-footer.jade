@@ -1,0 +1,13 @@
+mixin footer-support(obj, name)
+	each item in obj
+		each list in item.support
+				li
+					a(href=list.url)
+						=list.name
+
+mixin footer-about(obj, name)
+	each item in obj
+		each list in item.about
+			li
+				a(href=list.url)
+					=list.name

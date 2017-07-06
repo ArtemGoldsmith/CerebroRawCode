@@ -1,0 +1,16 @@
+extends layouts/_default
+
+block vars
+	- page = {name: 'about', count: '3', title: 'About'}
+
+block header
+	include partials/_header-black
+
+block main
+	include pages/about3/_main
+
+block customizer
+	include pages/about3/_customizer
+
+block footer
+	include partials/_footer

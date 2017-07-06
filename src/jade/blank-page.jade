@@ -1,0 +1,16 @@
+extends layouts/_default
+
+block vars
+	- page = {name: 'blank-page', count: '', title: 'Blank Page'}
+
+block header
+	include partials/_header
+
+block main
+	include pages/blank-page/_main
+
+block customizer
+	include pages/blank-page/_customizer
+
+block footer
+	include partials/_footer

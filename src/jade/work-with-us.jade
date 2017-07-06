@@ -1,0 +1,16 @@
+extends layouts/_default
+
+block vars
+	- page = {name: 'work-with-us', count: '', title: 'Work With Us'}
+
+block header
+	include partials/_header
+
+block main
+	include pages/work-with-us/_main
+
+block customizer
+	include pages/work-with-us/_customizer
+
+block footer
+	include partials/_footer

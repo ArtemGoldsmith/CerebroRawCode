@@ -1,0 +1,53 @@
+#pages-list
+  position: fixed
+  z-index: 99999
+  right: 0
+  top: 16vw
+  #pages-list-open
+    background: none
+    border: 0
+    background-color: #32383e
+    color: $white
+    width: 51px
+    height: 52px
+    margin-left: -51px
+    cursor: pointer
+    float: left
+    position: relative
+    z-index: 1
+    +crossBrowser(transition, all .2s ease-in)
+    &:hover
+      background-color: lighten(#32383e, 10%)
+    &:focus
+      outline: 0
+  #pages-list-block
+    background-color: #32383e
+    width: 295px
+    margin-right: -295px
+    +crossBrowser(transition, margin-right .3s ease-in)
+    &.open
+      margin-right: 0
+    .nav-pills > li + li
+      margin-left: 1px
+    .nav
+      height: 260px
+      overflow-y: scroll
+      overflow-x: hidden
+      li
+        width: 100%
+        a
+          color: $white
+          padding: 13px 29px
+          border-radius: 0
+          font-family: "Rubik"
+          +crossBrowser(transition, all .2s ease-in)
+          &:hover
+            background-color: lighten(#32383e, 10%)
+        &.active
+          a
+            background-color: lighten(#32383e, 10%)
+@media (max-width: 480px)
+  #pages-list
+    top: 50vw
+    #pages-list-block
+      width: 270px

@@ -1,0 +1,10 @@
+extends layouts/_default
+
+block vars
+	- page = {name: 'shortcode', count: '', title: 'Shortcode'}
+
+block customizer
+	include pages/shortcode/_customizer
+
+block main
+	include pages/shortcode/_main

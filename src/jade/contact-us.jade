@@ -1,0 +1,16 @@
+extends layouts/_default
+
+block vars
+	- page = {name: 'contact-us', count: '', title: 'Contact Us'}
+
+block header
+	include partials/_header
+
+block main
+	include pages/contact-us/_main
+
+block customizer
+	include pages/contact-us/_customizer
+
+block footer
+	include partials/_footer

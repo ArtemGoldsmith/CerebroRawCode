@@ -1,0 +1,56 @@
+input#theme-custom-colors.input(type='hidden')
+input#text-custom-colors.input(type='hidden')
+input#buttons-custom-colors.input(type='hidden')
+
+include ../components/_pages
+
+footer
+	.container.pb-60
+		.row.pt-45
+			.col-md-5.col-sm-6
+				.logo
+					include ../../images/logo-white.svg
+					.socials.pull-right.pull-none-md.pull-none-sm.mt-md-10.mt-sm-25.mb-sm-90
+						a.facebook(href='javascript:void(0)')
+							i.fa.fa-facebook(aria-hidden='true')
+						a.twitter(href='javascript:void(0)')
+							i.fa.fa-twitter(aria-hidden='true')
+						a.google(href='javascript:void(0)')
+							i.fa.fa-google-plus(aria-hidden='true')
+						a.instagram(href='javascript:void(0)')
+							i.fa.fa-instagram(aria-hidden='true')
+				p.footer-text.fs-10.fw-100.mt-40.mt-md-60 Left till here away at to whom past. Feelings laughing at no wondered repeated provided finished. It acceptance thoroughly my advantages everything as. Are projecting inquietude affronting preference saw who.
+				///.logo
+			include ../components/_navbar-footer
+			.col-md-3.col-sm-6.mt-xs-200.list
+				p.text-heading.footer Customer Support
+				ul
+					+footer-support(footer, "name")
+			.col-md-2.col-sm-6.mt-sm-200.mt-xs-40.list
+				p.text-heading.footer About
+				ul
+					+footer-about(footer, "name")
+			.col-md-2.col-sm-6.list.mt-sm-30
+				p.text-heading.footer Contacts
+				p.mt-40 Cerebro
+				p 4658 Linden Avenue
+				p East Northport, NY 11731
+				p
+					span Email:
+					|  info@cerebro.com
+				p.mt-25
+					span Open:
+					|  24hrs
+			.col-md-5.sign-up.col-sm-6.mnt-100.mnt-sm-200.col-sm-pull-6.col-md-pull-0
+				p.text-heading.footer Sign Up For Our Newsletter
+				form(action='javascript:void(0)', method='POST')
+					input(type='email', name='email', required='', placeholder='Your email address here...')
+					input.rect-btn(value='Sign Up', type='submit')
+		///.row
+	///.container
+	small.center-block.text-center.fs-9.fs-xs-8.fw-100.pt-10.pb-10 Copyright © 2016 Dart Simple Solutions. All rights reserved.
+///footer
+
+// JavaScript
+include ../components/_scripts
+

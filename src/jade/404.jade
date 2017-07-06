@@ -1,0 +1,10 @@
+extends layouts/_default
+
+block vars
+	- page = {name: '404', count: '', title: 'Page not found'}
+
+block customizer
+	include pages/404/_customizer
+
+block main
+	include pages/404/_main

@@ -1,0 +1,66 @@
+.shortcode-header.pt-30.pb-30
+	.container
+		.row
+			.col-md-12
+				div
+					a.rounded-btn(href='javascript:void(0)') Learn more
+					a.rounded-btn.hover(href='javascript:void(0)') Learn more
+					a.rounded-btn.active(href='javascript:void(0)') Learn more
+					a.rounded-btn.disabled(href='javascript:void(0)') Learn more
+				div
+					input.rect-btn(type='button', value='Sign Up')
+					input.rect-btn.hover(type='button', value='Sign Up')
+					input.rect-btn.active(type='button', value='Sign Up')
+					input.rect-btn.disabled(type='button', value='Sign Up')
+		///.row
+	///.container
+///.shortcode-header
+main.container.pt-40.pb-40
+	.row
+		div.col-md-3.mt-20
+			p.fs-22 Fonts:
+			p.bold.fs-22 Rubik Bold
+			p.regular.fs-22 Rubik Regular
+		div.col-md-4
+			h1 Cerebro
+				span.orange-text  h1
+			h2 Cerebro
+				span.orange-text  h2
+			h3 Cerebro
+				span.orange-text  h3
+			h4 Cerebro
+				span.orange-text  h4
+			h5 Cerebro
+				span.orange-text  h5
+		div.col-md-5.mt-25
+			p.fs-14.mb-30
+				| Pellentesque ornare venenatis vestibulum.
+				br
+				| Aenean lacinia bibendum nulla sed consectetur.
+			p.fs-12.mb-30
+				| Pellentesque ornare venenatis vestibulum.
+				br
+				| Aenean lacinia bibendum nulla sed consectetur.
+			p.fs-11
+				| Pellentesque ornare venenatis vestibulum.
+				br
+				| Aenean lacinia bibendum nulla sed consectetur.
+	///.row
+///.container
+.shortcode-footer.pt-30.pb-30
+	.container
+		.row
+			.col-md-12.col-sm-12.col-xs-12
+				.w-100.pull-left.form-wrapper
+					form.col-md-6.col-md-offset-0.col-sm-8.col-sm-offset-2.col-xs-12(action='javascript:void(0)', method='POST')
+						input.col-md-5.col-sm-5.mb-xs-20(type='text', name='name', required='', placeholder='Your Name')
+						input.col-md-5.col-md-offset-2.col-sm-5.col-sm-offset-2.mb-xs-20(type='email', name='email', required='', placeholder='Your Email')
+						textarea.col-md-12.col-sm-12.mt-20(name='message', rows='3', required='', placeholder='Message')
+						.text-center
+							button.submit-btn(type='submit') Send
+				///.form-wrapper
+		///.row
+	///.container
+///.shortcode-footer
+include ../../components/_pages
+include ../../components/_scripts

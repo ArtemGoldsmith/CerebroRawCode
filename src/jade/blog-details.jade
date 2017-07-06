@@ -1,0 +1,16 @@
+extends layouts/_default
+
+block vars
+	- page = {name: 'blog-details', count: '', title: 'Blog Details'}
+
+block header
+	include partials/_header
+
+block main
+	include pages/blog-details/_main
+
+block customizer
+	include pages/blog-details/_customizer
+
+block footer
+	include partials/_footer

@@ -1,0 +1,317 @@
+#customizer
+  position: fixed
+  z-index: 100000
+  right: 0
+  top: 11vw
+  #generate
+    width: 100%
+    color: $white
+    border: 0
+    border-radius: 0
+    padding: 15px
+    font-size: 13pt
+    font-family: "Rubik Regular"
+    font-weight: 100
+    background-color: lighten(#32383e, 10%)
+    text-align: center
+    &:focus, &:active
+      outline: none
+  .selectpicker
+    position: relative
+    &:after
+      content: "\f078"
+      font-family: "FontAwesome"
+      font-size: 9px
+      color: $white
+      right: 11px
+      top: 11px
+      padding: 0 0 2px
+      position: absolute
+      pointer-events: none
+    select
+      background-color: #49525a
+      border: 0
+      padding: 5px 30px 5px 15px
+      +crossBrowser(appearance, none)
+      +crossBrowser(border-radius, 0)
+      &:hover, &:focus, &:active
+        outline: none
+  #custom-toggle
+    background: none
+    border: 0
+    background-color: #32383e
+    color: $white
+    width: 51px
+    height: 52px
+    margin-left: -51px
+    cursor: pointer
+    float: left
+    position: relative
+    z-index: 1
+    +crossBrowser(transition, all .2s ease-in)
+    &:hover
+      background-color: lighten(#32383e, 10%)
+    &:focus
+      outline: 0
+  #custom-block
+    background-color: #32383e
+    width: 295px
+    margin-right: -295px
+    +crossBrowser(transition, margin-right .3s ease-in)
+    &.open
+      margin-right: 0
+    .nav-pills > li + li
+      margin-left: 1px
+    .nav
+      li
+        a
+          color: $white
+          padding: 13px 21.5px
+          border-radius: 0
+          font-family: "Rubik Regular"
+          font-weight: 100
+          +crossBrowser(transition, all .2s ease-in)
+          &:hover
+            background-color: lighten(#32383e, 10%)
+        &.active
+          a
+            background-color: lighten(#32383e, 10%)
+    button
+      i
+        &.rotated
+          +crossBrowser(transform, rotate(180deg))
+    #customize
+      .navbar
+        margin-bottom: 0
+        min-height: 35px
+        border: 0
+        border-radius: 0
+        button
+          margin-top: 1px
+          margin-bottom: 1px
+      .section
+        button
+          margin-bottom: 1px
+      button
+        width: 100%
+        color: $white
+        border: 0
+        border-radius: 0
+        padding: 15px
+        font-size: 13pt
+        font-family: "Rubik Regular"
+        font-weight: 100
+        background-color: lighten(#32383e, 10%)
+        text-align: left
+        &:focus, &:active
+          outline: none
+        i
+          position: absolute
+          right: 20px
+          font-size: 8pt
+          line-height: 16pt
+      .dropdown-menu
+        position: relative
+        top: 0
+        background: none
+        border: 0
+        padding: 20px 15px
+        font-size: 13pt
+        font-family: "Rubik Regular"
+        font-weight: 100
+        color: $white
+        width: 100%
+        height: 100%
+        box-shadow: none
+        input[type='radio']
+          display: none
+        input[type="radio"] + label
+          float: left
+          clear: both
+          background-color: $white
+          display: inline-block
+          width: 25px
+          height: 25px
+          //margin: 15px 4px 0 0
+          margin: 5px 0
+          vertical-align: middle
+          cursor: pointer
+          -moz-border-radius: 50%
+          border-radius:  50%
+        input[type="radio"] + label > .round
+          display: block
+          position: relative
+          z-index: 1
+          opacity: 0
+          width: 15px
+          height: 15px
+          margin: 5px auto
+          background-color: #32383e
+          vertical-align: middle
+          cursor: pointer
+          -moz-border-radius: 50%
+          border-radius: 50%
+        input[type="radio"]:checked + label > .round
+          opacity: 1
+        label
+          .text
+            position: absolute
+            left: 53px
+            font-size: 14pt!important
+
+    #color
+      .hexColor
+        position: relative
+        width: 130px
+        margin-top: 20px
+        float: left
+        label
+          color: rgba(255, 255, 255, .325)
+          display: block
+          position: absolute
+          line-height: 44px
+          padding: 0 0 0 18px
+          z-index: 501
+        input
+          background: rgb(73, 82, 90)
+          color: #fff
+          box-shadow: inset 0 0 3px rgba(0,0,0,.075)
+          border: 0
+          border-radius: 3px
+          padding-left: 35px
+          font-size: 13pt
+          height: 44px
+          width: 100%
+          font-family: "Rubik Regular"
+          text-transform: uppercase
+          position: relative
+          z-index: 500
+      .theme-color
+        margin-top: 1px
+        margin-bottom: 1px
+      .text-color
+        margin-bottom: 1px
+      .buttons-color
+        margin-bottom: 1px
+      button
+        width: 100%
+        color: $white
+        border: 0
+        border-radius: 0
+        padding: 15px
+        font-size: 13pt
+        font-family: "Rubik Regular"
+        font-weight: 100
+        background-color: lighten(#32383e, 10%)
+        text-align: left
+        &:focus, &:active
+          outline: none
+        i
+          position: absolute
+          right: 20px
+          font-size: 8pt
+          line-height: 16pt
+      .dropdown-menu
+        position: relative
+        top: 0
+        background: none
+        border: 0
+        padding: 20px 15px
+        font-size: 13pt
+        font-family: "Rubik Regular"
+        font-weight: 100
+        color: $white
+        width: 100%
+        height: 100%
+        input[type="radio"]
+          display: none
+        input[type="radio"] + label
+          display: inline-block
+          width: 60px
+          height: 60px
+          margin: 5px 4px 0 0
+          vertical-align: middle
+          cursor: pointer
+          -moz-border-radius: 50%
+          border-radius:  50%
+        input[type="radio"] + label > .round
+          display: block
+          position: relative
+          z-index: 1
+          opacity: 0
+          width: 20px
+          height: 20px
+          margin: 20px auto
+          background-color: #32383e
+          vertical-align: middle
+          cursor: pointer
+          -moz-border-radius: 50%
+          border-radius: 50%
+        input[type="radio"]:checked + label > .round
+          opacity: 1
+      .color-input
+        display: none
+
+      .color-label
+        display: none
+        margin-left: 15px
+        position: absolute
+        height: 30px
+        width: 50px
+
+      .color-input:checked ~ #color-picker
+        opacity: 1
+
+      .color-picker
+        position: relative
+        height: 120px
+        canvas
+          float: left
+          height: 100%
+          &:hover
+            cursor: crosshair
+        .color-block
+          width: 85%
+        .color-stripe
+          margin-left: 5%
+          width: 10%
+.colorPickerMarker
+  height: 20px
+  width: 20px
+  border: 2px white solid
+  border-radius: 22px
+  position: absolute
+  cursor: pointer
+  z-index: 10
+  margin-left: -10px
+  margin-top: -10px
+  pointer-events: none
+.colorPickerStripe
+  height: 5px
+  width: 26px
+  right: 0
+  border-top: 1px solid $light-black
+  border-bottom: 1px solid $light-black
+  background-color: $white
+  position: absolute
+  cursor: pointer
+  z-index: 10
+  pointer-events: none
+
+@media (max-width: 480px)
+  #customizer
+    top: 30vw
+    #custom-block
+      width: 270px
+      .nav
+        li
+          a
+            padding: 15px 22.5px
+      #color
+        .dropdown-menu
+          padding: 10px 10px 25px
+          input[type="radio"] + label
+            margin: 5px -2px 0 0
+  .colorPickerStripe
+    width: 25px
+    right: 10px
